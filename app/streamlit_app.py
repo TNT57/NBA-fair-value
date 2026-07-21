@@ -16,6 +16,7 @@ import streamlit as st
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 
 from nba_fair_value.config import PROCESSED_PARQUET  # noqa: E402
+from nba_fair_value.data import build_processed  # noqa: E402
 from nba_fair_value.explain import linear_contributions  # noqa: E402
 from nba_fair_value.features import build_features  # noqa: E402
 from nba_fair_value.models import (  # noqa: E402
@@ -34,6 +35,10 @@ st.set_page_config(page_title="NBA Fair-Value Explorer", page_icon="🏀",
 
 @st.cache_data(show_spinner="Loading data and fitting models…")
 def load_scored():
+    # On a fresh deploy (e.g. Streamlit Cloud) the processed parquet is
+    # git-ignored and absent — rebuild it from the tracked raw CSVs.
+    if not PROCESSED_PARQUET.exists():
+        build_processed()
     df = pd.read_parquet(PROCESSED_PARQUET)
     engineered, feature_cols = build_features(df)
     scored, _ = fit_predict_fair_value(engineered, feature_cols, kind="gbm")
