@@ -7,7 +7,7 @@ performance alone, then flags the gap between what they're actually paid and
 what they're worth. Trained on **six seasons (2019-20 → 2024-25, ~2,100
 player-seasons)** scraped fresh from Basketball-Reference and ESPN.
 
-> 🔗 **Live demo:** _add your Streamlit Cloud URL here_ · 📊 [How it works](#how-it-works) · 🧪 [Reproduce it](#reproduce-it)
+> ▶️ **[Try the live demo](https://nba-fair-value.streamlit.app/)** · 📊 [How it works](#how-it-works) · 🧪 [Reproduce it](#reproduce-it)
 
 ![Fair value vs actual salary](outputs/figures/fair_vs_actual.png)
 
