@@ -2,12 +2,22 @@
 
 **Which NBA players are overpaid or underpaid — and by how many dollars?**
 
+<p align="center">
+  <a href="https://nba-fair-value.streamlit.app/">
+    <img src="https://img.shields.io/badge/%E2%96%B6_Try_the_live_demo-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white" alt="Try the live demo">
+  </a>
+  &nbsp;
+  <img src="https://img.shields.io/badge/Python-3.10+-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python 3.10+">
+  &nbsp;
+  <img src="https://img.shields.io/badge/License-MIT-2a78d6?style=for-the-badge" alt="MIT License">
+</p>
+
 A machine-learning model learns each player's *fair* salary from on-court
 performance alone, then flags the gap between what they're actually paid and
 what they're worth. Trained on **six seasons (2019-20 → 2024-25, ~2,100
 player-seasons)** scraped fresh from Basketball-Reference and ESPN.
 
-> ▶️ **[Try the live demo](https://nba-fair-value.streamlit.app/)** · 📊 [How it works](#how-it-works) · 🧪 [Reproduce it](#reproduce-it)
+> 📊 [How it works](#how-it-works) · 🧪 [Reproduce it](#reproduce-it) · ▶️ [Live demo](https://nba-fair-value.streamlit.app/)
 
 ![Fair value vs actual salary](outputs/figures/fair_vs_actual.png)
 
@@ -103,9 +113,9 @@ Push this repo to GitHub → [share.streamlit.io](https://share.streamlit.io) �
 ## Repository layout
 
 ```
-src/nba_fair_value/   data · features · models · evaluate · explain · viz · scrape
+src/nba_fair_value/   data · features · models · evaluate · explain · glossary · viz · scrape
 app/streamlit_app.py  interactive explorer (player lookup, leaderboards, charts)
-scripts/make_figures  regenerate README figures
+scripts/make_figures.py  regenerate README figures
 tests/                leakage + feature-engineering unit tests
 data/raw · processed  per-season CSVs → merged parquet
 docs/assignment-origin  the original single-season assignment (provenance)
