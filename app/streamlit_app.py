@@ -152,17 +152,17 @@ with left:
     if verdict == "Overpaid":
         st.markdown(
             f"The model values **{player}**'s production at about "
-            f"**${fair_m:.1f}M**, but he's paid **${paid_m:.1f}M** — roughly "
-            f"**${gap:.1f}M above** fair value.")
+            f"**\\${fair_m:.1f}M**, but he's paid **\\${paid_m:.1f}M** — roughly "
+            f"**\\${gap:.1f}M above** fair value.")
     elif verdict == "Underpaid":
         st.markdown(
             f"The model values **{player}**'s production at about "
-            f"**${fair_m:.1f}M**, yet he's paid only **${paid_m:.1f}M** — a "
-            f"bargain of roughly **${gap:.1f}M**.")
+            f"**\\${fair_m:.1f}M**, yet he's paid only **\\${paid_m:.1f}M** — a "
+            f"bargain of roughly **\\${gap:.1f}M**.")
     else:
         st.markdown(
             f"**{player}** is paid close to what the model thinks his "
-            f"production is worth (**${paid_m:.1f}M** vs **${fair_m:.1f}M**).")
+            f"production is worth (**\\${paid_m:.1f}M** vs **\\${fair_m:.1f}M**).")
 
     contrib = linear_contributions(lin, feature_cols, row)
     contrib.index = [pretty_feature_name(c) for c in contrib.index]
